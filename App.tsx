@@ -924,6 +924,8 @@ AI와 STEAM으로 미래를 상상하며 문제 해결 능력을 키우고,
                                       <option className="text-slate-900">초등 2학년</option>
                                       <option className="text-slate-900">초등 3학년</option>
                                       <option className="text-slate-900">초등 4학년</option>
+                                      <option className="text-slate-900">초등 5학년</option>
+                                      <option className="text-slate-900">초등 6학년</option>
                                       <option className="text-slate-900">중등 1학년</option>
                                       <option className="text-slate-900">중등 2학년</option>
                                       <option className="text-slate-900">중등 3학년</option>
