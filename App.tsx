@@ -200,18 +200,18 @@ export default function App() {
   const villaImages = [
     "image/Villa 1.jpg", 
     "image/Villa 2.jpg", 
-    "image/Villa 3.jpg", // Assumed existence or placeholder
-    "image/Villa 4.jpg", // Assumed existence or placeholder
-    "image/Villa 5.jpg"  // Assumed existence or placeholder
+    "image/Villa 3.jpg", 
+    "image/Villa 4.jpg", 
+    "image/Villa 5.jpg"
   ];
   
   // Expanded images for Meals (5 images)
   const mealImages = [
     "image/Food 1.jpg", 
     "image/Food 2.jpg",
-    "image/Food 3.jpg", // Assumed existence or placeholder
-    "image/Food 4.jpg", // Assumed existence or placeholder
-    "image/Food 5.jpg"  // Assumed existence or placeholder
+    "image/Food 3.jpg", 
+    "image/Food 4.jpg", 
+    "image/Food 5.jpg"
   ];
 
   const partners = [
@@ -305,7 +305,6 @@ AI와 STEAM으로 미래를 상상하며 문제 해결 능력을 키우고,
         </div>
         <Container className="relative z-10 text-center">
           <div className="flex flex-col items-center">
-            {/* REMOVED THE BADGE HERE */}
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight mb-2 bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-white opacity-0 animate-[fadeIn_1s_ease-out_forwards]">EDUONE GLOBAL <br className="hidden md:block" /> CAMP 2026</h1>
             <h2 className="text-2xl md:text-4xl font-bold tracking-widest uppercase mb-6 opacity-0 animate-[fadeIn_1s_ease-out_0.3s_forwards]" style={{ color: THEME.light }}>하노이 V-One Camp</h2>
             <div className="space-y-2 mb-12 opacity-0 animate-[fadeIn_1s_ease-out_0.6s_forwards]">
@@ -344,10 +343,10 @@ AI와 STEAM으로 미래를 상상하며 문제 해결 능력을 키우고,
           </h2>
           <p className="text-xl text-gray-500 font-serif italic mb-8">"When language meets empathy, learning becomes growth."</p>
           
-          {/* Responsive Graph Visualization - Fixed for PC/Tablet, TIGHTER for Mobile */}
+          {/* Responsive Graph Visualization */}
           <div className="relative mx-auto mt-12 flex items-center justify-center w-[230px] h-[230px] md:w-[600px] md:h-[600px]">
             
-            {/* Center Circle - Smaller on Mobile */}
+            {/* Center Circle */}
             <div className="absolute z-20 w-28 h-28 md:w-64 md:h-64 bg-white rounded-full shadow-2xl flex items-center justify-center border-4 border-slate-50">
                 <div className="text-center">
                     <span className="block font-extrabold text-xl md:text-4xl tracking-tighter" style={{ color: THEME.primary }}>ONE</span>
@@ -355,29 +354,25 @@ AI와 STEAM으로 미래를 상상하며 문제 해결 능력을 키우고,
                 </div>
             </div>
             
-            {/* Floating Bubbles - Fixed absolute positions to prevent overlap/cutoff */}
-            {/* Top Left - Empathy */}
+            {/* Floating Bubbles */}
             <div className="absolute top-0 left-0 md:top-[10%] md:left-[10%] animate-float-1">
               <div className="w-20 h-20 md:w-40 md:h-40 rounded-full flex items-center justify-center shadow-lg bg-sky-400/90 backdrop-blur-sm text-white">
                 <span className="font-bold text-base md:text-2xl">감성</span>
               </div>
             </div>
 
-            {/* Top Right - Global */}
             <div className="absolute top-0 right-0 md:top-[10%] md:right-[10%] animate-float-2">
               <div className="w-24 h-24 md:w-44 md:h-44 rounded-full flex items-center justify-center shadow-xl text-white" style={{ backgroundColor: THEME.primary }}>
                 <span className="font-bold text-lg md:text-2xl">글로벌</span>
               </div>
             </div>
 
-            {/* Bottom Right - Science */}
             <div className="absolute bottom-0 right-0 md:bottom-[10%] md:right-[15%] animate-float-3">
                <div className="w-16 h-16 md:w-36 md:h-36 rounded-full flex items-center justify-center shadow-lg bg-blue-800/90 backdrop-blur-sm text-white">
                 <span className="font-bold text-sm md:text-xl">과학</span>
               </div>
             </div>
 
-            {/* Bottom Left - Self-directed */}
             <div className="absolute bottom-0 left-0 md:bottom-[10%] md:left-[15%] animate-float-4">
                <div className="w-20 h-20 md:w-40 md:h-40 rounded-full flex items-center justify-center shadow-lg bg-cyan-500/90 backdrop-blur-sm text-white">
                 <span className="font-bold text-base md:text-2xl">자기주도</span>
@@ -387,7 +382,7 @@ AI와 STEAM으로 미래를 상상하며 문제 해결 능력을 키우고,
         </Container>
       </Section>
 
-      {/* --- 3. Representative Message (Moved Up) --- */}
+      {/* --- 3. Representative Message --- */}
       <Section className="py-16" style={{ backgroundColor: THEME.light }}>
         <Container>
           <div className="text-center mb-12">
@@ -770,7 +765,7 @@ AI와 STEAM으로 미래를 상상하며 문제 해결 능력을 키우고,
       <Section className="py-16 bg-white border-t border-slate-100">
         <Container>
             <h3 className="text-center text-slate-400 font-bold uppercase tracking-widest mb-10 text-sm">Trusted Partners</h3>
-            <div className="flex flex-wrap justify-center items-center gap-4 md:gap-12 mb-16">
+            <div className="flex flex-wrap md:flex-nowrap justify-center md:justify-between items-center gap-4 md:gap-6 mb-16 px-4">
                 {partners.map((partner, index) => (
                     <a 
                       key={index} 
@@ -779,7 +774,7 @@ AI와 STEAM으로 미래를 상상하며 문제 해결 능력을 키우고,
                       rel="noopener noreferrer"
                       className="h-16 w-[30%] md:w-auto md:flex-1 flex flex-col items-center justify-center rounded-xl hover:bg-blue-50 transition-all cursor-pointer group px-2 transform hover:scale-105 duration-300"
                     >
-                        <img src={partner.logo} alt={`${partner.name} Logo`} className="w-auto h-12 md:h-14 lg:h-20 object-contain transition-transform duration-300 group-hover:scale-110" />
+                        <img src={partner.logo} alt={`${partner.name} Logo`} className="h-12 md:h-14 object-contain transition-transform duration-300 group-hover:scale-110" />
                     </a>
                 ))}
             </div>
@@ -925,11 +920,13 @@ AI와 STEAM으로 미래를 상상하며 문제 해결 능력을 키우고,
                                   <div>
                                     <label className="block text-xs font-bold uppercase tracking-wider text-blue-300 mb-1">Grade</label>
                                     <select name="grade" className="w-full bg-black/20 border border-blue-400/50 rounded-lg p-3 text-white focus:outline-none" value={formGrade} onChange={(e) => setFormGrade(e.target.value)}>
+                                      <option className="text-slate-900">초등 1학년</option>
+                                      <option className="text-slate-900">초등 2학년</option>
                                       <option className="text-slate-900">초등 3학년</option>
                                       <option className="text-slate-900">초등 4학년</option>
-                                      <option className="text-slate-900">초등 5학년</option>
-                                      <option className="text-slate-900">초등 6학년</option>
                                       <option className="text-slate-900">중등 1학년</option>
+                                      <option className="text-slate-900">중등 2학년</option>
+                                      <option className="text-slate-900">중등 3학년</option>
                                     </select>
                                   </div>
                                   <div>
@@ -946,6 +943,7 @@ AI와 STEAM으로 미래를 상상하며 문제 해결 능력을 키우고,
                               </button>
                           </form>
                         )}
+                    <div className="mt-8 pt-8 border-t border-blue-400/50 text-center"><a href="https://open.kakao.com/o/sdTZ912h" target="_blank" rel="noopener noreferrer" className="w-full font-bold py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-white/10 transition-colors border border-white/30" style={{color: 'white'}}><MessageCircle fill="currentColor" size={20} /> 카카오톡으로 1:1 실시간 상담</a></div>
                     </div>
                 </div>
             </div>
