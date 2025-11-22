@@ -309,8 +309,8 @@ AI와 STEAM으로 미래를 상상하며 문제 해결 능력을 키우고,
       {/* --- 2. Brand Philosophy --- */}
       <Section id="philosophy" className="py-12" style={{ background: `linear-gradient(to bottom, white, ${THEME.light})` }}>
         <Container className="text-center">
-          {/* Partners - Updated Layout: 3 columns on mobile, flex on desktop */}
-          <div className="flex flex-wrap justify-center items-center gap-x-4 gap-y-8 md:gap-16 mb-16 opacity-100">
+          {/* Partners - Updated Layout: 3 columns on mobile, flex-nowrap on desktop */}
+          <div className="flex flex-wrap md:flex-nowrap justify-center items-center gap-x-4 gap-y-8 md:gap-8 lg:gap-16 mb-16 opacity-100">
               {partners.map((partner, index) => (
                 <a key={index} href={partner.link} target="_blank" rel="noopener noreferrer" className="w-[30%] md:w-auto flex justify-center items-center group">
                   <img src={partner.logo} alt={`${partner.name} Logo`} className="w-full h-auto max-h-16 md:h-24 object-contain transition-transform duration-300 hover:scale-110" />
