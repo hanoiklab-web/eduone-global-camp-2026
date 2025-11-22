@@ -3,7 +3,7 @@ import {
   MessageCircle, ArrowRight, ChevronDown, Star, Globe, Shield, 
   Users, Play, Check, Instagram, Youtube, Mail, Phone, 
   ChevronUp, BookOpen, Rocket, Map, Utensils, MessageSquare,
-  Clock, FileText, Download, Cpu, Palette, Zap, Heart, Brain, Layout, Flame
+  Clock, FileText, Download, Cpu, Palette, Zap, Heart, Brain, Layout, Flame, Camera
 } from 'lucide-react';
 
 // --- Theme Constants ---
@@ -136,6 +136,10 @@ export default function App() {
   const [formMessage, setFormMessage] = useState('');
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
+  // Image Gallery States
+  const [currentVillaIndex, setCurrentVillaIndex] = useState(0);
+  const [currentMealIndex, setCurrentMealIndex] = useState(0);
+
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
@@ -191,19 +195,23 @@ export default function App() {
   // Images
   const classImages = ["image/class 1.jpg", "image/class 2.png", "image/class 3.png"];
   const cultureImages = ["image/city tour.jpg", "image/ocean park.jpg", "image/hanoi museum.jpg", "image/campfire.jpg"];
+  
+  // Expanded images for Accommodation (5 images)
   const villaImages = [
-    "image/Villa 1.jpg",
-    "image/Villa 2.jpg",
-    "image/Villa 3.jpg",
-    "image/Villa 4.jpg",
-    "image/Villa 5.jpg"
+    "image/Villa 1.jpg", 
+    "image/Villa 2.jpg", 
+    "image/Villa 3.jpg", // Assumed existence or placeholder
+    "image/Villa 4.jpg", // Assumed existence or placeholder
+    "image/Villa 5.jpg"  // Assumed existence or placeholder
   ];
+  
+  // Expanded images for Meals (5 images)
   const mealImages = [
-    "image/Food 1.jpg",
-    "image/Food 2.jpgF",
-    "image/Food 3.jpg",
-    "image/Food 4.jpg",
-    "image/Food 5.jpg"
+    "image/Food 1.jpg", 
+    "image/Food 2.jpg",
+    "image/Food 3.jpg", // Assumed existence or placeholder
+    "image/Food 4.jpg", // Assumed existence or placeholder
+    "image/Food 5.jpg"  // Assumed existence or placeholder
   ];
 
   const partners = [
@@ -273,6 +281,8 @@ AI와 STEAM으로 미래를 상상하며 문제 해결 능력을 키우고,
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         .glass-card-dark { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
         ::selection { background-color: ${THEME.light}; color: ${THEME.primary}; }
+        .fade-enter { opacity: 0; }
+        .fade-enter-active { opacity: 1; transition: opacity 300ms ease-in; }
       `}</style>
 
       {/* Floating Kakao Button */}
@@ -321,11 +331,11 @@ AI와 STEAM으로 미래를 상상하며 문제 해결 능력을 키우고,
       {/* --- 2. Brand Philosophy --- */}
       <Section id="philosophy" className="py-12" style={{ background: `linear-gradient(to bottom, white, ${THEME.light})` }}>
         <Container className="text-center">
-          {/* Partners - Updated Layout: 3 columns on mobile, flex-nowrap on desktop */}
-          <div className="flex flex-wrap md:flex-nowrap justify-center items-center gap-x-4 gap-y-8 md:gap-8 lg:gap-16 mb-16 opacity-100">
+          {/* Partners - Fixed to ensure no wrapping on Desktop */}
+          <div className="flex flex-wrap md:flex-nowrap justify-center md:justify-between items-center gap-8 md:gap-4 lg:gap-8 w-full mb-16 opacity-100">
               {partners.map((partner, index) => (
-                <a key={index} href={partner.link} target="_blank" rel="noopener noreferrer" className="w-[30%] md:w-auto flex justify-center items-center group">
-                  <img src={partner.logo} alt={`${partner.name} Logo`} className="w-full h-auto max-h-16 md:h-24 object-contain transition-transform duration-300 hover:scale-110" />
+                <a key={index} href={partner.link} target="_blank" rel="noopener noreferrer" className="w-[45%] md:w-auto md:flex-1 flex justify-center items-center group shrink-0">
+                  <img src={partner.logo} alt={`${partner.name} Logo`} className="w-auto h-12 md:h-14 lg:h-20 object-contain transition-transform duration-300 hover:scale-110" />
                 </a>
               ))}
           </div>
@@ -514,11 +524,36 @@ AI와 STEAM으로 미래를 상상하며 문제 해결 능력을 키우고,
           </div>
 
           <div className="flex flex-col gap-24">
-            {/* Row 1: Accommodation */}
+            {/* Row 1: Accommodation (Clickable Gallery) */}
             <div className="flex flex-col md:flex-row items-center gap-16">
                 <div className="w-full md:w-1/2">
-                    <div className="rounded-3xl overflow-hidden shadow-xl border-4 border-white">
-                         <img src={villaImages[0]} alt="Villa" className="w-full h-full object-cover" />
+                    <div 
+                      className="rounded-3xl overflow-hidden shadow-xl border-4 border-white relative group cursor-pointer"
+                      onClick={() => setCurrentVillaIndex((prev) => (prev + 1) % villaImages.length)}
+                    >
+                         {/* Image Display */}
+                         <img 
+                           key={currentVillaIndex}
+                           src={villaImages[currentVillaIndex]} 
+                           alt={`Villa ${currentVillaIndex + 1}`} 
+                           className="w-full h-80 md:h-96 object-cover transition-opacity duration-300 animate-[fadeIn_0.3s_ease-in-out]"
+                           onError={(e) => {
+                               // Fallback if specific numbered image doesn't exist
+                               e.currentTarget.src = "image/Villa 1.jpg";
+                           }}
+                         />
+                         
+                         {/* Click Hint Overlay */}
+                         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                             <div className="bg-black/50 text-white px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-2">
+                                <Camera size={16} /> Click for next photo
+                             </div>
+                         </div>
+                         
+                         {/* Pagination Badge */}
+                         <div className="absolute bottom-4 right-4 bg-black/60 text-white text-xs px-3 py-1 rounded-full font-bold">
+                            {currentVillaIndex + 1} / {villaImages.length}
+                         </div>
                     </div>
                 </div>
                 <div className="w-full md:w-1/2">
@@ -539,11 +574,35 @@ AI와 STEAM으로 미래를 상상하며 문제 해결 능력을 키우고,
                 </div>
             </div>
 
-            {/* Row 2: Meals */}
+            {/* Row 2: Meals (Clickable Gallery) */}
              <div className="flex flex-col md:flex-row-reverse items-center gap-16">
                 <div className="w-full md:w-1/2">
-                     <div className="rounded-3xl overflow-hidden shadow-xl border-4 border-white">
-                         <img src={mealImages[0]} alt="Meal" className="w-full h-full object-cover" />
+                     <div 
+                       className="rounded-3xl overflow-hidden shadow-xl border-4 border-white relative group cursor-pointer"
+                       onClick={() => setCurrentMealIndex((prev) => (prev + 1) % mealImages.length)}
+                     >
+                         <img 
+                           key={currentMealIndex}
+                           src={mealImages[currentMealIndex]} 
+                           alt={`Meal ${currentMealIndex + 1}`} 
+                           className="w-full h-80 md:h-96 object-cover transition-opacity duration-300 animate-[fadeIn_0.3s_ease-in-out]"
+                           onError={(e) => {
+                               // Fallback if specific numbered image doesn't exist
+                               e.currentTarget.src = "image/Food 1.jpg";
+                           }}
+                         />
+                         
+                         {/* Click Hint Overlay */}
+                         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                             <div className="bg-black/50 text-white px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-2">
+                                <Camera size={16} /> Click for next photo
+                             </div>
+                         </div>
+                         
+                         {/* Pagination Badge */}
+                         <div className="absolute bottom-4 right-4 bg-black/60 text-white text-xs px-3 py-1 rounded-full font-bold">
+                            {currentMealIndex + 1} / {mealImages.length}
+                         </div>
                     </div>
                 </div>
                 <div className="w-full md:w-1/2 text-left"> 
@@ -718,9 +777,9 @@ AI와 STEAM으로 미래를 상상하며 문제 해결 능력을 키우고,
                       href={partner.link} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="h-24 w-[30%] md:w-auto flex flex-col items-center justify-center rounded-xl hover:bg-blue-50 transition-all cursor-pointer group px-2 transform hover:scale-105 duration-300"
+                      className="h-16 w-[30%] md:w-auto md:flex-1 flex flex-col items-center justify-center rounded-xl hover:bg-blue-50 transition-all cursor-pointer group px-2 transform hover:scale-105 duration-300"
                     >
-                        <img src={partner.logo} alt={`${partner.name} Logo`} className="h-16 md:h-20 object-contain transition-transform duration-300 group-hover:scale-110" />
+                        <img src={partner.logo} alt={`${partner.name} Logo`} className="w-auto h-12 md:h-14 lg:h-20 object-contain transition-transform duration-300 group-hover:scale-110" />
                     </a>
                 ))}
             </div>
