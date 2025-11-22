@@ -190,9 +190,21 @@ export default function App() {
 
   // Images
   const classImages = ["image/class 1.jpg", "image/class 2.png", "image/class 3.png"];
-  const cultureImages = ["image/city tour.jpg", "image/ocean park.jpg", "image/hanoi museum.jpg"];
-  const villaImages = ["image/villa 1.jpg", "image/villa 2.jpg"];
-  const mealImages = ["image/meal 1.jpg", "image/meal 2.jpg"];
+  const cultureImages = ["image/city tour.jpg", "image/ocean park.jpg", "image/hanoi museum.jpg", "image/campfire.jpg"];
+  const villaImages = [
+    "image/Villa 1.jpg",
+    "image/Villa 2.jpg",
+    "image/Villa 3.jpg",
+    "image/Villa 4.jpg",
+    "image/Villa 5.jpg"
+  ];
+  const mealImages = [
+    "image/Food 1.jpg",
+    "image/Food 2.jpgF",
+    "image/Food 3.jpg",
+    "image/Food 4.jpg",
+    "image/Food 5.jpg"
+  ];
 
   const partners = [
     { name: "What's Edu", logo: "image/whatsedu.png", link: "https://whatsedu.kr/" },
