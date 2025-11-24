@@ -224,14 +224,12 @@ export default function App() {
 
   // Timetable Data
   const schedule = [
-    { time: "07:30 - 08:30", activity: "Wake up & Breakfast (기상 및 조식)" },
-    { time: "09:00 - 12:00", activity: "English Class @ Maple Bear" },
-    { time: "12:00 - 13:00", activity: "Lunch (점심 식사)" },
-    { time: "13:00 - 16:00", activity: "STEAM & Activity (오후 활동)" },
-    { time: "16:00 - 18:00", activity: "Free Time & Shower (휴식 및 샤워)" },
-    { time: "18:00 - 19:00", activity: "Dinner (저녁 식사)" },
-    { time: "19:00 - 21:00", activity: "Self-Coaching (자기주도학습)" },
-    { time: "21:30", activity: "Sleep (취침)" }
+    { time: "07:30 - 08:30", activity: "조식 및 준비" },
+    { time: "09:00 - 15:00", activity: "Maple Bear 정규수업" },
+    { time: "16:00 - 18:00", activity: "STEAM & Activity" },
+    { time: "18:00 - 19:00", activity: "저녁 식사" },
+    { time: "19:00 - 20:00", activity: "자기주도 코칭" },
+    { time: "20:00", activity: "휴식 및 샤워" }
   ];
 
   // Full Messages
@@ -468,7 +466,7 @@ AI와 STEAM으로 미래를 상상하며 문제 해결 능력을 키우고,
           <div className="mb-16 max-w-4xl mx-auto">
             <div className="flex items-center justify-center gap-2 mb-6">
               <Clock className="text-blue-600" />
-              <h3 className="text-2xl font-bold text-slate-800">Daily Schedule (일정표)</h3>
+              <h3 className="text-2xl font-bold text-slate-800">Daily Schedule (평일 일정표)</h3>
             </div>
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200">
               <div className="divide-y divide-gray-100">
