@@ -229,7 +229,7 @@ export default function App() {
     { time: "16:00 - 18:00", activity: "STEAM & Activity" },
     { time: "18:00 - 19:00", activity: "저녁 식사" },
     { time: "19:00 - 20:00", activity: "자기주도 코칭" },
-    { time: "20:00", activity: "휴식 및 샤워" }
+    { time: "20:00 - 22:00", activity: "휴식 및 샤워" }
   ];
 
   // Full Messages
