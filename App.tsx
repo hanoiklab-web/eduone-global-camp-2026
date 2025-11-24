@@ -474,7 +474,7 @@ AI와 STEAM으로 미래를 상상하며 문제 해결 능력을 키우고,
                   <div key={idx} className="flex flex-col sm:flex-row p-4 hover:bg-blue-50/30 transition duration-150">
                     <div className="w-full sm:w-40 font-bold text-blue-600 mb-1 sm:mb-0 flex items-center gap-2 shrink-0">
                       <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                      {item.time.split(' ')[0]} {/* Show only start time or full range */}
+                      {item.time} {/* Đã sửa: Bây giờ sẽ hiển thị toàn bộ chuỗi thời gian */}
                     </div>
                     <div className="text-gray-700 font-medium">{item.activity}</div>
                   </div>
