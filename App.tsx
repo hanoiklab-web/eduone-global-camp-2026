@@ -194,8 +194,9 @@ export default function App() {
 
   // Images
   const classImages = ["image/class 1.jpg", "image/class 2.png", "image/class 3.png"];
-  const cultureImages = ["image/city tour.jpg", "image/ocean park.jpg", "image/hanoi museum.jpg", "image/campfire.jpg"];
-  
+  const cultureImages = ["image/tour 1.jpg", "image/tour 2.jpg", "image/tour 3.jpg"];
+  const weekendActivityImages = ["image/ocean park.jpg", "image/hanoi museum.jpg", "image/city tour.jpg", "image/campfire.jpg"];
+
   // Expanded images for Accommodation (5 images)
   const villaImages = [
     "image/Villa 1.jpg", 
@@ -848,7 +849,7 @@ AI와 STEAM으로 미래를 상상하며 문제 해결 능력을 키우고,
             
             {activeTab === 'culture' && (
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 animate-[fadeIn_0.5s_ease-out]">
-                     {cultureImages.map((img, idx) => (
+                     {cultureImages.map((img, idx) => (// Đã thay cultureImages bằng weekendActivityImages
                         <div key={idx} className="rounded-xl overflow-hidden shadow-md h-64 group relative">
                              <img src={img} alt="Culture scene" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                         </div>
