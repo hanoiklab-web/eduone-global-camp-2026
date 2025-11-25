@@ -771,7 +771,7 @@ AI와 STEAM으로 미래를 상상하며 문제 해결 능력을 키우고,
         <Container className="relative z-10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="text-center md:text-left">
-              <h3 className="text-3xl md:text-4xl font-bold mb-4">Camp E-Brochure</h3>
+              <h3 className="text-3xl md:text-4xl font-bold mb-4">EduOne Global Camp 2026 Brochure</h3>
               <p className="text-blue-200 text-lg max-w-xl">
                 캠프의 상세 커리큘럼, 일정, 비용 및 특전을 담은 브로셔를 지금 확인하세요.<br className="hidden md:block"/>
                 웹에서 바로 확인하고 PDF로 저장할 수 있습니다.
@@ -779,7 +779,7 @@ AI와 STEAM으로 미래를 상상하며 문제 해결 능력을 키우고,
             </div>
             <div>
               <a 
-                href="#"
+                href="documents/brochure.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group bg-white text-blue-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-blue-50 transition-all duration-300 flex items-center gap-3 shadow-xl hover:scale-105"
