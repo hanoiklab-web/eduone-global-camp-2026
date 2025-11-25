@@ -3,7 +3,8 @@ import {
   MessageCircle, ArrowRight, ChevronDown, Star, Globe, Shield, 
   Users, Play, Check, Instagram, Youtube, Mail, Phone, 
   ChevronUp, BookOpen, Rocket, Map, Utensils, MessageSquare,
-  Clock, FileText, Download, Cpu, Palette, Zap, Heart, Brain, Layout, Flame, Camera
+  Clock, FileText, Download, Cpu, Palette, Zap, Heart, Brain, Layout, Flame, Camera,
+  ArrowLeft, Printer
 } from 'lucide-react';
 
 // --- Theme Constants ---
@@ -757,6 +758,37 @@ AI와 STEAM으로 미래를 상상하며 문제 해결 능력을 키우고,
                     </div>
                 </div>
             </div>
+        </Container>
+      </Section>
+
+      {/* --- Brochure CTA --- */}
+      <Section className="py-16 bg-blue-900 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-blue-800 opacity-50"></div>
+        {/* Decorative Circles */}
+        <div className="absolute -right-20 -top-20 w-64 h-64 rounded-full border-8 border-white/10"></div>
+        <div className="absolute -left-20 -bottom-20 w-96 h-96 rounded-full border-8 border-white/5"></div>
+        
+        <Container className="relative z-10">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="text-center md:text-left">
+              <h3 className="text-3xl md:text-4xl font-bold mb-4">Camp E-Brochure</h3>
+              <p className="text-blue-200 text-lg max-w-xl">
+                캠프의 상세 커리큘럼, 일정, 비용 및 특전을 담은 브로셔를 지금 확인하세요.<br className="hidden md:block"/>
+                웹에서 바로 확인하고 PDF로 저장할 수 있습니다.
+              </p>
+            </div>
+            <div>
+              <a 
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group bg-white text-blue-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-blue-50 transition-all duration-300 flex items-center gap-3 shadow-xl hover:scale-105"
+              >
+                 <span>View Full Brochure</span>
+                 <ArrowRight className="transition-transform group-hover:translate-x-1" />
+              </a>
+            </div>
+          </div>
         </Container>
       </Section>
 
