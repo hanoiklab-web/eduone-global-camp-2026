@@ -93,7 +93,7 @@ const RepresentativeCard: React.FC<RepresentativeCardProps> = ({ image, name, ro
         ))}
       </div>
 
-      <div className="mt-auto">
+      <div>
         {title && (
             <h4 className="font-bold text-sm mb-2" style={{ color: THEME.primary }}>"{title}"</h4>
         )}
