@@ -225,7 +225,7 @@ export default function App() {
   ];
 
   const partners = [
-    { name: "What's Edu", logo: "image/whatsedu.png", link: "https://whatsedu.kr/" },
+    { name: "What's Edu", logo: "image/whatsedu.png", link: "" },
     { name: "Eduplex", logo: "image/eduplex.png", link: "https://www.eduplex.net/" },
     { name: "ATC", logo: "image/ATC.png", link: "https://hicomputing.org:45939/?ckattempt=1" },
     { name: "Maple Bear", logo: "image/Mapple Bear.png", link: "https://www.maplebear.ca/" },
